@@ -1,3 +1,7 @@
+# Vim swap files
+*.swp
+
+### Python defaults from github
 *.py[cod]
 
 # C extensions

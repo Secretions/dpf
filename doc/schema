@@ -1,0 +1,37 @@
+config
+
+key - string
+value - string
+
+keys: rsa_size (1024), rsa_public_exponent (65537), pw_cipher (aes_256_cbc), pbkdf2_iterations (10000), pdkdf2_length (32), aes256_iv_length (32)
+
+
+users
+
+id - unique number
+name - string
+pubkey - string
+
+user_groups
+
+id - unique number
+name - string
+member - number
+
+password_groups
+
+id - unique number
+name - string
+member - number
+
+password
+
+id - unique number
+salt - pdkdf2 salt
+iv - cipher iv
+password - encrypted password
+name - string
+description - string
+notes - string
+location - string
+
