@@ -37,7 +37,7 @@ def parse():
 
 ### Helper functions
 def stub(cli, tokens):
-    print("This function is not yet implemented.\nArguments:", tokens)
+    print("This function is not yet implemented.\n\nArguments: {0}".format(tokens))
 
 if __name__ == '__main__':
     main()
