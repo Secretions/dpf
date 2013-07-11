@@ -34,14 +34,18 @@ cbuf = cStringIO.StringIO()
 
 c_data = hexlify(cipher_filter(cobj, pbuf, cbuf))
 
+print "raw data",c_data
+
 c_data_padding = c_data[len(data) * 2:]
+
+print "padding",c_data_padding
 
 c_data = c_data[:len(data) *2]
 
+print "final data",c_data
+
 pbuf.close()
 cbuf.close()
-
-print c_data
 
 cobj = EVP.Cipher(alg='aes_256_cbc', key=key, iv=iv, op=0) # 0 = dec
 
