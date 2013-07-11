@@ -18,8 +18,24 @@ def main():
     cli.add_item('modify', 'Modify existing password', stub)
     cli.add_item('remove', 'Remove password', stub)
 
-    ### Utility commands
-    cli.add_item('dump', 'Dump password file', stub)
+    ### Menus
+    # Would be better if we had a way to put commands into sections
+    # Also, need a way to run submenu commands via arguments
+    cli.add_item('util', 'Utility Menu', util_menu)
+
+    ### Menu exit
+    # Would be better if we had a contextual system menu
+    def exit_menu(cli, tokens):
+        if cli.context is not 'default':
+            cli.context = 'default'
+        else:
+            cli.default_exit_action(tokens)
+    cli.add_item('exit', 'Exit', exit_menu, context='system', aliases = ['quit'])
+
+    ### Utility menu
+    def util_menu(cli, tokens):
+        cli.context = 'util'
+    cli.add_item('dump', 'Dump password file', stub, context='util')
 
     if len(args.command):
         ### Override invalid action (if no specific commands and non-interactive, assume search)
