@@ -1,0 +1,10 @@
+Standardizing rsa/aes stuff on pycrypto for python3 compatibility, but
+using pycrypto v2.6 for pkcs1_oacp support. Precise does not have this yet.
+
+Installing Ubuntu 12.04 requirements:
+
+apt-get install python3-setuptools build-essential python3-dev libgmp-dev
+python3 -m easy_install pip
+pip-3.2 install pycrypto (or install --upgrade if you already installed the 2.4 package via apt-get)
+
+
